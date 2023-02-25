@@ -1,0 +1,136 @@
+<p>add-planters works!</p>
+
+<div class="card text-center col-md-4 offset-md-4" style="background-color:  #F0F4F7;">
+    
+    <!-- <form  (ngSubmit) = "onSubmit()"> -->
+        <form (ngSubmit)="onSubmit()" #planterForm="ngForm">
+        <div class="form-group">
+            <label for="name">Enter Plant Name</label>
+            <input type="text" class="form-control" id="name" name="name"
+                   [(ngModel)]="model.plantName" placeholder="Enter Name " #name="ngModel"  pattern="[a-zA-Z]+" required>
+      
+                   <div *ngIf="name.invalid">
+                    <span style="color: red;" *ngIf="name.errors?.['required']">
+      
+                        Please Enter Name
+                    </span>
+                    <span style="color: red;" *ngIf="name.errors?.['pattern']">
+                      Name is not valid.
+                    </span>
+      
+                </div>
+                <div class="form-group">
+                    <label> Planter Height </label>
+                    <input type="text" [(ngModel)]="model.planterHeight" class="form-control" id="pplanterHeight" 
+                     name="pplanterHeight" #planterHeight="ngModel" placeholder="Enter the Cost" required pattern="[0-9+]">
+                     <div *ngIf="planterHeight.invalid">
+                        <span style="color: red;" *ngIf="planterHeight.errors?.['required']">
+                            Enter the Planter Height
+                        </span>
+                        <span style="color: red;" *ngIf="planterHeight.errors?.['pattern']">
+                            Height is not valid
+                        </span>
+        
+                     </div>
+                     </div>
+    
+        
+        
+            
+
+        <!-- <div class="form-group">
+            <label>Planter Height </label>
+            <input type="text" class="form-control" id="pheight" 
+             name="pheight" [(ngModel)]="model.planterHeight"/>
+             
+        </div> -->
+        
+        <div class="form-group">
+            <label> Planter Category </label>
+            <select class="form-control"id="pcategory" name="pcategory"
+            [(ngModel)]="model.planterCategory">
+            <option value="Ceramic Planter"> Ceramic Planter </option>
+            <option value="Metal Planter"> Metal Planter </option>
+            <option value="Wooden  Planter"> Wooden Planter </option>
+            <option value="Hanging Planter"> Hanging Planter </option>
+            </select>
+    
+        </div>
+        <div class="form-group">
+            <label>Drinage Holes </label>
+            <input type="text" class="form-control" id="pdrinageHoles" 
+             name="pdrinageHoles" [(ngModel)]="model.drinageHoles"/>
+        </div>
+        
+        <!-- <div class="form-group">
+            <label> Types Of Planters </label>
+            <select class="form-control"id="ptyepesofplanters" name="ptyepesofplanters"
+            [(ngModel)]="planter.typesOfPlanters">
+            <option selected> Choose Types Of Planters</option>
+            <option value="Ceramic Planter"> Ceramic Planter </option>
+            <option value="Wooden Planter"> Wooden Planter </option>
+            <option value="Metal Planter"> Metal Planter </option>
+            <option value="Glass Planter"> Glass Planter </option>
+            </select>
+    
+        </div> -->
+        <div class="form-group">
+            <label>Planter Stock</label>
+            <input type="text" class="form-control" id="pplanterStock" 
+             name="pplanterStock" [(ngModel)]="model.planterStock"/>
+        </div>
+
+        <div class="form-group">
+            <label>Planter Shape </label>
+            <input type="text" class="form-control" id="pplanterShape" 
+             name="pplanterShape" [(ngModel)]="model.planterShape"/>
+        </div>
+        <div class="form-group">
+            <label> Planter Cost </label>
+            <input type="text" [(ngModel)]="model.planterCost" class="form-control" id="pplanterCost" 
+             name="pplanterCost" #planterCost="ngModel" placeholder="Enter the Cost" required pattern="[0-9]+">
+             <div *ngIf="planterCost.invalid">
+                <span style="color: red;" *ngIf="planterCost.errors?.['required']">
+                    Enter the Planter Cost
+                </span>
+                <span style="color: red;" *ngIf="planterCost.errors?.['pattern']">
+                    Cost is not valid
+                </span>
+
+             </div>
+             </div>
+    
+        
+        <!-- <div class="form-group">
+            <label>Price </label>
+            <input type="text" class="form-control" id="pprice" 
+             name="pprice" [(ngModel)]="model.price"/>
+        </div> -->
+        <div class="form-group">
+            <label>Discount </label>
+            <input type="text" class="form-control" id="pdiscount" 
+             name="pdiscount" [(ngModel)]="model.discount"/>
+        </div>
+        <!-- <div class="form-group">
+            <label>Image name </label>
+            <input type="text" class="form-control" id="pimageName" 
+             name="pimageName" [(ngModel)]="planter.imageName"/>
+        </div> -->
+        <div class="form-group">
+            <label>Star Rating </label>
+            <input type="text" class="form-control" id="pstarRating" 
+             name="pstarRating" [(ngModel)]="model.starRating"/>
+        </div>
+        <div class="form-group">
+            <label>About  </label>
+            <input type="text" class="form-control" id="pabout" 
+             name="pabout" [(ngModel)]="model.about"/>
+        </div>
+    
+        <div class="card-footer text-muted">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+        
+         
+    <!-- </form> -->
+    </div>

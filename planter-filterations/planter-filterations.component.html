@@ -1,0 +1,15 @@
+<p>planter-filterations works!</p>
+
+<input type="text" #typesOfPlanters>
+<button (click)="getTypesOfPlanters(typesOfPlanters.value)">Types Of Planters</button>
+<div *ngFor="let p of allPlanters">
+
+            <div> {{p.planterId}}</div>
+            <div> <i>planter cost:- </i> {{p.planterCost}} </div>
+            <div> <i>Stock Available:- </i>{{p.planterStock}}</div>
+            <div><i>Shape:- </i>{{p.planterShape}}</div>
+            <div><i>Height:- </i>{{p.planterHeight}}</div>
+            <div><i>Name:- </i>{{p.plantName}}</div>
+            <div><i>Holes:- </i>{{p.drinageHoles}}</div>
+            <div><i>Capacity:- </i>{{p.planterCapacity}}</div><br />
+</div>

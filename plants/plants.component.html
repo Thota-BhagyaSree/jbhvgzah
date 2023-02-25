@@ -1,0 +1,15 @@
+<table style="width: 100%; height: 20%"><img src="/assets/images/ordersuccess.jpg" alt="Product image" width="100%" height="600px"></table>
+
+
+<i class="order" style="color: rgb(119, 95, 183); text-align: center;">Your Order Details</i><br>
+<table class="order" style="text-align: center;">
+    <tr>
+       <b style="color: green;">{{category}}</b>
+    </tr>
+    
+       <tr><img src="/assets/images/{{imageName}}" alt="Product image" width="180px" height="180px"></tr>
+       <tr><b style="color: rgb(8, 45, 8);">{{productName}}</b></tr>
+       <tr><i>Amount Paid:- </i><b>{{price}}</b></tr>
+       <i>Delivered With in 6 days</i>
+
+       <tr><button class="btn btn-info"value="Add Review" (click)="addReview()" #order> add review  </button></tr>

@@ -1,0 +1,10 @@
+<p>seed-review works!</p>
+
+Average rating :4
+<br>
+<button class="btn btn-primary" (click)="viewAllSeedsByName(id.value)" #id>all Reviews</button>
+	<div *ngFor="let x of review">
+	  <div><P>SeedId:{{x.seedId}}</P></div>
+	  <div><P>StarRating:{{x.starRating}}</P></div>
+	  <div><P>Feedback:{{x.msg}}</P></div> 
+	</div>

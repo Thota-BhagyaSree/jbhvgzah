@@ -1,0 +1,129 @@
+<p>add-plant works!</p>
+<div class="card text-center col-md-4 offset-md-4" style="background-color: rgba(61, 208, 225, 0.267);">
+    <form (ngSubmit)="onSubmit()" #plantForm="ngForm">
+        <div class="form-group">
+            <label for="name">Enter Plant Name</label>
+            <input type="text" class="form-control" id="name" name="name"
+                   [(ngModel)]="model.plantName" placeholder="Enter Name " #name="ngModel"  pattern="[a-zA-Z]+" required>
+      
+                   <div *ngIf="name.invalid">
+                    <span style="color: red;" *ngIf="name.errors?.['required']">
+      
+                        Please Enter Name
+                    </span>
+                    <span style="color: red;" *ngIf="name.errors?.['pattern']">
+                      Name is not valid.
+                    </span>
+      
+                </div>
+    
+                <br>
+        <div class="form-group">
+            <label> typeOfPlant </label>
+            <select class="form-control"id="ptypeOfPlant" name="ptypeOfPlant"
+            [(ngModel)]="model.typeOfPlant">
+            <option value="FlowerPlant"> FlowerPlant </option>
+            <option value="FruitPlant"> FruitPlant </option>
+            </select>
+    
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Height</label>
+            <input type="text" [(ngModel)]="model.height"
+             class="form-control" 
+             id="pheight" 
+             name="pheight" placeholder="Enter Height"   #Height="ngModel"  required pattern="[0-9]+">
+             <div *ngIf="Height.invalid">
+                <span style="color: red;" *ngIf="Height.errors?.['required']">
+    
+                    Height is required Field
+                </span>
+                <span style="color: red;" *ngIf="Height.errors?.['pattern']">
+                    Height is not valid 
+                </span>
+    
+            </div>
+         </div>
+         <br>
+        <div class="form-group">
+            <label> Bloom Season </label>
+            <select class="form-control"id="pbloomSeason" name="pbloomSeason"
+            [(ngModel)]="model.bloomSeason">
+            <option value="Summer"> Summer </option>
+            <option value="Winter"> Winter </option>
+            </select>
+            </div>
+        <br>
+
+        <div class="form-group">
+            <label>About</label>
+            <input type="text" class="form-control" id="pabout" 
+             name="pabout" [(ngModel)]="model.about"/>
+        </div>
+       <br>
+       <tr>
+        <div class="form-group">
+          <label for="starRating">Number of Stars</label>
+          <div class="starRating">
+            <span class="star" [class.filled]="model.starRating >= 1" (click)="model.starRating = 1">&#9733;</span>
+            <span class="star" [class.filled]="model.starRating >= 2" (click)="model.starRating = 2">&#9733;</span>
+            <span class="star" [class.filled]="model.starRating >= 3" (click)="model.starRating = 3">&#9733;</span>
+            <span class="star" [class.filled]="model.starRating >= 4" (click)="model.starRating = 4">&#9733;</span>
+            <span class="star" [class.filled]="model.starRating >= 5" (click)="model.starRating = 5">&#9733;</span>
+          </div>
+        </div>
+      </tr>
+      <br>
+
+
+        <!-- <div class="form-group">
+            <label> starRating </label>
+            <select class="form-control"id="pstarRating" name="pstarRating"
+            [(ngModel)]="model.starRating">
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+    
+        </div> -->
+        <br>
+        <div class="form-group">
+            <label> Price</label>
+            <input type="text" [(ngModel)]="model.price"
+             class="form-control" 
+             id="pprice" 
+             name="pprice" #Price="ngModel" required pattern="[0-9]+">
+             <div *ngIf="Price.invalid">
+                <span style="color: red;" *ngIf="Price.errors?.['required']">
+    
+                    Price is required Field
+                </span>
+                <span style="color: red;" *ngIf="Price.errors?.['pattern']">
+                    Price is not valid
+                </span>
+             </div>
+            
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Discount </label>
+            <input type="text" class="form-control" id="pdiscount" 
+             name="pdiscount" [(ngModel)]="model.discount"/>
+        </div>
+       <br>
+       <div class="form-group">
+        <label>imageName </label>
+        <input type="text" class="form-control" id="pimageName" 
+         name="pimageName" [(ngModel)]="model.imageName"/>
+    </div>
+    <br>
+        <div class="card-footer text-muted">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+        
+         
+    </div>
+

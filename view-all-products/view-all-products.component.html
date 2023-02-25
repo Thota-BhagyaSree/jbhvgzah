@@ -1,0 +1,42 @@
+<div *ngFor="let p of allProducts">
+    <table>
+        <tr>
+            <td> <img style="border: 1cm ;" src="/assets/images/{{p.imageName}}" alt="Product image" width="200px" height="250px" > </td>
+            <td> 
+                <!-- <h3>{{p.productId}}</h3> -->
+                <h4>{{p.productName}} </h4>
+                <b>{{p.category}} family</b><br>
+                <i style="color: rgb(35, 181, 96);">Bloom Season : </i>
+                <b>{{p.bloomSeason}}</b>
+                <p> {{p.about}} </p>
+                
+                <span>Price :-<span [style]="p.price<75?priceLowCss:priceNormalCSS" ><b style="color: rgb(107, 89, 8);">{{p.price|currency}} </b>   </span>  
+                    <i *ngIf="p.discount>0"> 
+                        with {{p.discount}}% Off 
+                        <span *ngIf="p.discount>9">
+                            <b style="color: blue; font-family: Georgia, 'Times New Roman', Times, serif;"><u> Recommended</u></b>
+                        </span>
+                    </i> 
+            
+                </span> 
+                <br/>
+                Height {{p.height}} cm<br>
+                Star Rating :- <b>{{p.starRating}}</b>
+                <hr/>
+                <table>
+                    <tr>
+
+                      <td><button class="btn btn-success" value="Add Order" (click)="placeOrder(p.productId,p.productName,p.category,p.bloomSeason,p.about,p.price,p.discount,p.height,p.starRating)"> Add to Cart </button> </td>
+                
+                      <td><button class="btn btn-success" value="{{p.productId}}" (click)="viewProductDetails(product.value)" #product> View Details</button></td>
+                
+                      <td><button class="btn btn-success" value="Add Order1" (click)="addOrder()" #order> add order  </button></td>
+                    </tr>
+                </table>       
+            </td>
+            
+        </tr>
+    </table>
+    </div>
+    <br/>
+    

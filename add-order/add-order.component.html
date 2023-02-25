@@ -1,0 +1,51 @@
+<p>add-order works!</p>
+<div class="card text-center col-md-4 offset-md-4" style="background-color:  #F0F4F7;">
+    
+    <form  (ngSubmit) = "onSubmit()">
+        
+        <i style="color: slateblue;">Category:-</i> <b>{{category}}</b><br>
+        <i style="color: slateblue;">Plant Name:-</i>  <b>{{plantName}}</b>
+        <!-- seedName:- <div>{{seedName}}</div>
+
+       PlanterId:-  <div>{{planterId}}</div>
+       Plant Name:-  <div>{{plantName}}</div>
+        Planter Shape:- <div>{{planterShape}}</div>
+        Planter Height:- <div>{{planterHeight}}</div>
+        Cost:- <div>{{planterCost}}</div> -->
+
+        <div class="form-group">
+            <label><i style="color: slateblue;">Customer Id </i></label>
+            <input type="number" class="form-control" id="customerId" 
+             name="customerId" [(ngModel)]="order.customerId"/>
+        </div>
+
+        <!-- <div [(ngModel)]="order.productId"> {{productId}}</div> -->
+
+        <div class="form-group mr-2">
+            <label><i style="color: slateblue;">Quantity</i> </label>
+            <input type="number" class="form-control" id="quantity" name="quantity"
+                [(ngModel)]="order.quantity"/>
+        </div>
+
+       <!-- Star Rsting:-  <b>{{starRating}}</b> -->
+
+       <i style="color: slateblue;">Price:-</i> <b style="color: palevioletred;">{{price}}</b>
+
+        <div class="form-group">
+            <label><i style="color: slateblue;"> Transcation mode </i></label>
+            <select class="browser-default custom-select" id="transactionMode" name="transactionMode"
+                [(ngModel)]="order.transactionMode">
+                <option value="online">online</option>
+                <option value="payondelivery">pay on delievry</option>
+                <option value="cash">Cash</option>
+               </select>
+        </div>
+    
+        <div class="card-footer text-muted">
+            <button class="btn btn-primary" type="submit">Buy Now</button>
+        </div>
+        
+         
+    </form>
+    </div>
+    

@@ -1,0 +1,22 @@
+<p>all-planters works!</p>
+
+<table>
+    <tr>
+        <td *ngFor="let p of allPlanters">
+            <div><img src="/assets/images/image2.jpg"></div>
+            <div> {{p.planterId}}</div>
+            <div> <i>planter cost:- </i> {{p.planterCost}} </div>
+            <div> <i>Stock Available:- </i>{{p.planterStock}}</div>
+            <div><i>Shape:- </i>{{p.planterShape}}</div>
+            <div><i>Height:- </i>{{p.planterHeight}}</div>
+            <div><i>Name:- </i>{{p.plantName}}</div>
+            <div><i>Holes:- </i>{{p.drinageHoles}}</div>
+            <div><i>Capacity:- </i>{{p.planterCapacity}}</div><br />
+            <div><button value="view" (click)="viewProductDetails(p.planterId,p.plantName,p.planterShape,p.planterHeight,p.planterCost)"> View Details</button></div>
+            <button value="Add Order1" (click)="addOrder()" #order> add order  </button>
+            <hr>
+        </td>
+
+        </tr>
+        
+</table>
